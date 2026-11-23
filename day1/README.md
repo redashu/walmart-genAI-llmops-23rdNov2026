@@ -66,3 +66,7 @@ PS C:\Users\azureuser>
 ### model download locally 
 
 <img src="llm8.png">
+
+### using ollama to deploy model locally 
+
+<img src="llm9.png">
