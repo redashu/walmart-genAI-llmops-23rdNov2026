@@ -62,3 +62,7 @@ NAME    ID    SIZE    MODIFIED
 PS C:\Users\azureuser>
 
 ```
+
+### model download locally 
+
+<img src="llm8.png">
