@@ -46,7 +46,19 @@ pip install transformers datasets peft accelerate safetensors sentencepiece hugg
 
 ### download hugging face model locally 
 
-````
+```
  hf download  HuggingFaceTB/SmolLM2-135M --local-dir .\models\
 
  ```
+
+ ### Downloading ollama & verify 
+
+ ```
+
+PS C:\Users\azureuser> ollama --version
+ollama version is 0.40.17
+PS C:\Users\azureuser> ollama list
+NAME    ID    SIZE    MODIFIED
+PS C:\Users\azureuser>
+
+```
