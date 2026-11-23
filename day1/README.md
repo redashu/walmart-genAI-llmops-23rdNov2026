@@ -39,3 +39,14 @@ pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 pip install transformers datasets peft accelerate safetensors sentencepiece huggingface_hub scikit-learn
 ```
+
+### Model package format to deployment 
+
+<img src="llm7.png">
+
+### download hugging face model locally 
+
+````
+ hf download  HuggingFaceTB/SmolLM2-135M --local-dir .\models\
+
+ ```
