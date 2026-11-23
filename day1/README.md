@@ -11,3 +11,12 @@
 ### MLops in history 
 
 <img src="llm3.png">
+
+### LLM + prod app things to be taken care
+
+<img src="llm4.png">
+
+### we are using Foundation model (given by original org like openai , meta)
+
+<img src="llm5.png">
+
