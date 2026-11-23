@@ -33,4 +33,9 @@ PS C:\Users\azureuser\Desktop\llmops-demo> .\ashu-env\Scripts\activate
 
 ```
 pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+
+===> Installing more libs
+
+pip install transformers datasets peft accelerate safetensors sentencepiece huggingface_hub scikit-learn
 ```
