@@ -4,3 +4,10 @@
 
 <img src="llm1.png">
 
+### LLMops for llm apps 
+
+<img src="llm2.png">
+
+### MLops in history 
+
+<img src="llm3.png">
