@@ -20,3 +20,17 @@
 
 <img src="llm5.png">
 
+### Creating virtual env in python 
+
+```
+PS C:\Users\azureuser\Desktop\llmops-demo> python -m venv ashu-env
+PS C:\Users\azureuser\Desktop\llmops-demo> .\ashu-env\Scripts\activate 
+(ashu-env) PS C:\Users\azureuser\Desktop\llmops-demo>  
+
+
+```
+### Installing some testing libs 
+
+```
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+```
