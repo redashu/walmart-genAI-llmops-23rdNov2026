@@ -70,3 +70,7 @@ PS C:\Users\azureuser>
 ### using ollama to deploy model locally 
 
 <img src="llm9.png">
+
+### Deployment tools for LLM 
+
+<img src="llm10.png">
