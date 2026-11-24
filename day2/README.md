@@ -11,3 +11,11 @@
 ### Model Deployment options 
 
 <img src="gpu3.png">
+
+### Ollama rest API
+
+<img src="gpu4.png">
+
+### calling openai std for ollama loaded model 
+
+<img src="gpu6.png">
