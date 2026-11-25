@@ -175,3 +175,18 @@ ashu-walmart:llamacppv1                               9f1e58345c3d        1.7GB 
 dockerashu/small-flask:appv2                          daaf5f1d506c        189MB           46MB    U   
 dockerashu/smollm-cpu:1.0                             360c9e814f91        1.7GB          562MB    U   
 ```
+
+### deploy containerized llm 
+
+```
+ 
+(llm-ops-env) azureuser@ashumodle-container:~$ sudo docker  run -itd --name ashullm-new -p 8082:8080  ashu-walmart:llamacppv1
+21f64cac9d7932baa738d2c1c3f1a5c0c16bfc4f8282bae6d2269e1378e4585c
+(llm-ops-env) azureuser@ashumodle-container:~$ sudo docker ps
+CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS                            PORTS                                         NAMES
+21f64cac9d79   ashu-walmart:llamacppv1   "/app/llama-server -…"   3 seconds ago   Up 3 seconds (health: starting)   0.0.0.0:8082->8080/tcp, [::]:8082->8080/tcp   ashullm-new
+(llm-ops-env) azureuser@ashumodle-container:~$ 
+(llm-ops-env) azureuser@ashumodle-container:~$ 
+
+
+```
