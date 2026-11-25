@@ -133,3 +133,45 @@ total 259M
 
 
 ```
+
+### Dockerifle + gguf model 
+
+```
+m-ops-env) azureuser@ashumodle-container:~$ ls
+Dockerfile  flask-llm-chat.zip  llm-ops-env  models-llm
+(llm-ops-env) azureuser@ashumodle-container:~$ ls models-llm/
+SmolLM2-360M-Instruct-Q4_K_M.gguf
+(llm-ops-env) azureuser@ashumodle-container:~$ cat Dockerfile 
+FROM  ghcr.io/ggml-org/llama.cpp:server
+
+COPY  models-llm/SmolLM2-360M-Instruct-Q4_K_M.gguf /models/model.gguf 
+
+EXPOES 8080
+
+CMD ["-m","/models/model.gguf","--host","0.0.0.0","--port","8080","-c","2048","-t","4"] 
+(llm-ops-env) azureuser@ashumodle-container:~$ ls
+Dockerfile  flask-llm-chat.zip  llm-ops-env  models-llm
+(llm-ops-env) azureuser@ashumodle-container:~$ 
+
+
+
+====>
+ sudo docker build -t ashu-walmart:llamacppv1 . 
+[+] Building 17.3s (7/7) FINISHED                                                                                            docker:default
+ => [internal] load build definition from Dockerfile                                                                                   0.0s
+ => => transferring dockerfile: 254B                                                                                                   0.0s
+ => [internal] load metadata for ghcr.io/ggml-org/llama.cpp:server                                                                     0.4s
+ => [internal] load .dockerignore                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                        0.0s
+ => [internal] load build context                            
+
+
+ ===>
+
+  sudo docker images
+                                                                                                                        i Info →   U  In Use
+IMAGE                                                 ID             DISK USAGE   CONTENT SIZE   EXTRA
+ashu-walmart:llamacppv1                               9f1e58345c3d        1.7GB          562MB        
+dockerashu/small-flask:appv2                          daaf5f1d506c        189MB           46MB    U   
+dockerashu/smollm-cpu:1.0                             360c9e814f91        1.7GB          562MB    U   
+```
