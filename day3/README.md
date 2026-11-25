@@ -110,3 +110,26 @@ Server: Docker Engine - Community
 
   pip install openai numpy huggingface_hub
 ```
+
+### downloading gguf quantized model
+
+```
+ls models-llm/
+(llm-ops-env) azureuser@ashumodle-container:~$ 
+(llm-ops-env) azureuser@ashumodle-container:~$ 
+(llm-ops-env) azureuser@ashumodle-container:~$  hf download unsloth/SmolLM2-360M-Instruct-GGUF   SmolLM2-360M-Instruct-Q4_K_M.gguf   --local-dir ./models-llm/
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+SmolLM2-360M-Instruct-Q4_K_M.gguf: downloading bytes: █████████████████████████████████████████████████████████████████|  270MB, 23.9MB/s  
+SmolLM2-360M-Instruct-Q4_K_M.gguf: reconstructing file: 100%|█████████████████████████████████████████████████|  271MB /  271MB, 24.8MB/s  
+✓ Downloaded
+  path: /home/azureuser/models-llm/SmolLM2-360M-Instruct-Q4_K_M.gguf
+(llm-ops-env) azureuser@ashumodle-container:~$ ls models-llm/
+SmolLM2-360M-Instruct-Q4_K_M.gguf
+(llm-ops-env) azureuser@ashumodle-container:~$ ls -lh models-llm/
+total 259M
+-rw-rw-r-- 1 azureuser azureuser 259M Nov 25 05:34 SmolLM2-360M-Instruct-Q4_K_M.gguf
+(llm-ops-env) azureuser@ashumodle-container:~$ 
+
+
+
+```
