@@ -97,3 +97,16 @@ Server: Docker Engine - Community
   Version:          1.5.3
 
 ```
+
+### Understanding LLM  containerization 
+
+<img src="llmc1.png">
+
+### Installing software 
+
+```
+ sudo apt install python3-venv python3-pip 
+
+
+  pip install openai numpy huggingface_hub
+```
