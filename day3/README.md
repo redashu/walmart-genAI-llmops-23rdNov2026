@@ -190,3 +190,28 @@ CONTAINER ID   IMAGE                     COMMAND                  CREATED       
 
 
 ```
+
+
+### LLM inferencing to model cpu / gpu calling 
+
+<img src="llm5.png">
+
+### using SGlang to deply with Nvidia Gpu 
+
+```
+ docker run --rm --gpus all   --ipc=host   -p 30000:30000   lmsysorg/sglang:latest   sglang serve Qwen/Qwen3-0.6B   --host 0.0.0.0   --port 30000
+
+```
+
+### testing inferning 
+
+```
+curl http://localhost:30000/v1/chat/completions   -H "Content-Type: application/json"   -d '{
+    "model": "SmolLM2-360M-Instruct",
+    "messages": [
+      {"role": "user", "content": "Explain Docker"}
+    ],
+    "max_tokens": 100
+  }'
+
+```
