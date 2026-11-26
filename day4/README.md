@@ -73,3 +73,52 @@ azureuser@ashumodle-container:~$
 
 
 ```
+
+### creating vector instance 
+
+```
+ docker run -d   --name qdrant-demo   -p 6333:6333   -p 6334:6334   -v qdrant_storage:/qdrant/storage   qdrant/qdrant
+
+```
+### using sample data 
+
+```
+ cat documents/sample_docs.json 
+
+[
+  {
+    "id": 1,
+    "title": "Kubernetes Pod",
+    "category": "Kubernetes",
+    "content": "A Kubernetes Pod is the smallest deployable unit in Kubernetes. It can contain one or more containers. Pods are managed by Kubernetes controllers such as Deployments."
+  },
+  {
+    "id": 2,
+    "title": "Docker Container",
+    "category": "Docker",
+    "content": "Docker containers package applications and their dependencies into isolated environments. Docker images are used to create containers, making application deployment consistent across environments."
+  },
+  {
+    "id": 3,
+    "title": "Linux Troubleshooting",
+    "category": "Linux",
+    "content": "Linux administrators use commands such as top, free, df, ps, and journalctl to troubleshoot CPU, memory, disk, process, and system log issues."
+  },
+  {
+    "id": 4,
+    "title": "CI/CD Pipeline",
+    "category": "DevOps",
+    "content": "A CI/CD pipeline automates application building, testing, and deployment. Tools such as Jenkins and GitHub Actions help teams deliver software continuously."
+  },
+  {
+    "id": 5,
+    "title": "Kubernetes Scaling",
+    "category": "Kubernetes",
+    "content": "Kubernetes Horizontal Pod Autoscaler automatically adjusts the number of application Pod replicas based on observed metrics such as CPU and memory utilization."
+  }
+]
+
+(llmops-env) root@ashumodle-container:~/LLMOps-Lab/qdrant-demo# 
+
+```
+
