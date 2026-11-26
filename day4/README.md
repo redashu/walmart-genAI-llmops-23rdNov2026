@@ -128,3 +128,66 @@ azureuser@ashumodle-container:~$
 <img src="ft1.png">
 
 
+### LLM apps with prod env basic overview 
+
+<img src="ft2.png">
+
+### vllm + Ray 
+
+<img src="ft3.png">
+
+### deploy LLM + llm app in k8s 
+
+```
+mops-308-trainer [ ~ ]$ kubectl  create  deployment  ashu-llm-smoll --image  dockerashu/smollm-cpu:1.0 --port 8080 --replicas 1
+deployment.apps/ashu-llm-smoll created
+llmops-308-trainer [ ~ ]$ kubectl get deploy
+NAME             READY   UP-TO-DATE   AVAILABLE   AGE
+ashu-llm-smoll   0/1     1            0           5s
+llmops-308-trainer [ ~ ]$ kubectl get  pods
+NAME                              READY   STATUS              RESTARTS   AGE
+ashu-llm-smoll-6976c46fb7-6mz2x   0/1     ContainerCreating   0          9s
+llmops-308-trainer [ ~ ]$ kubectl get hpa
+No resources found in default namespace.
+llmops-308-trainer [ ~ ]$ kubectl get  pods
+NAME                              READY   STATUS    RESTARTS   AGE
+ashu-llm-smoll-6976c46fb7-6mz2x   1/1     Running   0          24s
+llmops-308-trainer [ ~ ]$ 
+
+
+===>
+
+ 1  az account set --subscription 452f5ddd-eb48-4353-a961-30bec8a7f603
+    2  az aks get-credentials --resource-group Budget-RG --name llm-k8s --overwrite-existing
+    3  kubectl version 
+    4  kubectl get nodes
+    5  kubectl get ns
+    6  kubectl get  all
+    7  kubectl  create  deployment  ashu-llm-smoll --image  dockerashu/smollm-cpu:1.0 --port 8080 --replicas 1
+    8  kubectl get deploy
+    9  kubectl get  pods
+   10  kubectl get hpa
+   11  kubectl get  pods
+   12  kubectl logs ashu-llm-smoll-6976c46fb7-6mz2x
+   13  kubectl get deploy
+   14  kubectl expose deploy ashu-llm-smoll  --type ClusterIP --port 8080 --name llm-endpoint 
+   15  kubectl get svc
+   16  kubectl get po
+   17  kubectl get deploy
+   18  kubectl get ep llm-endpoint
+   19  kubectl scale deployment ashu-llm-smoll --replicas 2
+   20  kubectl get deploy
+   21  kubectl get po
+   22  kubectl get ep llm-endpoint
+   23  history 
+   24  kubectl  create  deployment ashu-llm-app --image dockerashu/small-flask:appv2  --port 5000 --replicas 1
+   25  kubectl get deploy
+   26  kubectl get  po
+   27  kubectl expose deploy ashu-llm-app --type LoadBalancer --port 80 --target-port 5000
+   28  kubectl get svc
+   29  kubectl get ep ashu-llm-app
+   30  kubectl get hpa
+   31  kubectl top pods
+   32  history 
+
+```
