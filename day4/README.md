@@ -122,3 +122,9 @@ azureuser@ashumodle-container:~$
 
 ```
 
+
+## Understanding some basic about fine tuning 
+
+<img src="ft1.png">
+
+
